@@ -12,7 +12,7 @@ Kubos linux build for raspberry pi boards, currently support rpi0, rpi0w, rpicm3
 
 6. If it's not the first build, the script will ask you whether you want to start from fresh or make clean build.
 
-7. To add custom softwares or libs(cd buildroot-2019.02.2; make menuconfig) skip this if no need.
+7. To add custom softwares or libs(cd buildroot-2019.02.2; make menuconfig then after the selection run make CARGO_TARGET=arm-buildroot-linux-gnueabihf) skip this if no need.
 
 8. DD the sdcard.img located in buildroot-2019.02.2/output/image into an sd card.
 
