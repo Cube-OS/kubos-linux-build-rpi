@@ -22,5 +22,10 @@ Kubos linux build for raspberry pi boards, currently support rpi0, rpi0w, rpicm3
 
 
 PS: 
-	May need to install(sudo apt-get install texinfo)
-	May need to patch 0005-Avoid-printing-null-strings.patch
+
+		May need to install(sudo apt-get install texinfo)
+	
+		May need to patch 0005-Avoid-printing-null-strings.patch
+	
+		To activate I2c, SPI, UART see activate buses
+	
