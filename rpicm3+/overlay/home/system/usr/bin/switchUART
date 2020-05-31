@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ $1 == "esp1" ]; then
+    mkdir /boot
+    mount /dev/mmcblk0p1 /boot
+    cp /boot/uarts-esp1-overlay.dtb /boot/overlays/uarts-overlay.dtb
+    echo "Device tree loaded for esp1, please reboot."
+elif [ $1 == "esp2" ]; then
+    mkdir /boot
+    mount /dev/mmcblk0p1 /boot
+    cp /boot/uarts-esp2-overlay.dtb /boot/overlays/uarts-overlay.dtb
+    echo "Device tree loaded for esp2, please reboot."
+elif [ $1 == "pin" ]; then
+    mkdir /boot
+    mount /dev/mmcblk0p1 /boot
+    nano /boot/uarts-overlay.dts
+elif [ $1 == "-h" ]; then
+    echo "switch_uart.sh [arg]"
+    echo ""
+    echo "    -h    --help"
+    echo "    esp1  --load esp1 uart"
+    echo "    esp2  --load esp2 uart"
+    echo "    pin   --edit pin definition"
+else
+    echo "Command not found, -h for help."
+fi

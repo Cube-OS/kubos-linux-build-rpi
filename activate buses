@@ -1,0 +1,38 @@
+Mount /boot:
+
+	mkdir /boot
+
+	mount /dev/mmcblk0p1 /boot
+	
+	
+UART:
+
+	make menuconfig, System configuration-extra arguments add --uart
+	
+	dtoverlay=uart1,txd1_pin=40,rxd1_pin=41
+	
+	dtoverlay=uart_swap
+	
+	gpio=40,41=a5
+
+
+I2C:
+
+	make busybox-menuconfig, in Linux Module Utilities add modprobe and more.
+
+	make linux-menuconfig, in device drivers-i2c support <M> I2C device interface and in I2C Hardware Bus support <M> Broadcom BCM2835 I2C controller.
+
+	make menuconfig, System configuration-extra arguments add --i2c
+
+	modprobe i2c-bcm2708
+
+	modprobe i2c-dev
+
+
+SPI:
+
+	make busybox-menuconfig, in Linux Module Utilities add modprobe and more.
+
+	make menuconfig, System configuration-extra arguments add --spi
+
+	modprobe spi-bcm2835
