@@ -31,20 +31,6 @@ arm_64bit=1
 __EOF__
 		fi
 		;;
-		--uart)
-		# Enable uart console
-		if ! grep -qE '^enable_uart=1' "${BINARIES_DIR}/rpi-firmware/config.txt"; then
-			cat << __EOF__ >> "${BINARIES_DIR}/rpi-firmware/config.txt"
-
-# enable uart
-enable_uart=1
-core_freq=250
-dtoverlay=pi3-disable-wifi
-dtoverlay=pi3-disable-bt
-dtoverlay=uarts
-__EOF__
-		fi
-		;;
 		--i2c)
                 # Enable uart console                                                              
                 if ! grep -qE '^dtparam=i2c_arm=on' "${BINARIES_DIR}/rpi-firmware/config.txt"; then
@@ -52,6 +38,11 @@ __EOF__
 
 # enable i2c
 dtparam=i2c_arm=on
+gpio=44,45=a2,np
+gpio=2,3=a5,np
+#dtparam=i2c_vc=on
+#gpio=0,1,44,45=a5
+#gpio=28,29=a0,np
 __EOF__
                 fi
                 ;;
@@ -64,6 +55,20 @@ __EOF__
 dtparam=spi=on
 __EOF__
                 fi
+                ;;
+                --uart)
+                # Enable uart console
+                if ! grep -qE '^enable_uart=1' "${BINARIES_DIR}/rpi-firmware/config.txt"; then
+			cat << __EOF__ >> "${BINARIES_DIR}/rpi-firmware/config.txt"
+
+# enable uart
+enable_uart=1
+core_freq=250
+dtoverlay=pi3-disable-wifi
+dtoverlay=pi3-disable-bt
+dtoverlay=uarts
+__EOF__
+		fi
 		;;
 		--gpu_mem_256=*|--gpu_mem_512=*|--gpu_mem_1024=*)
 		# Set GPU memory
