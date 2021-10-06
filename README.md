@@ -4,7 +4,7 @@ Kubos linux build for raspberry pi boards, currently support rpi0, rpi0w, rpicm3
 
 2. Run rustup show to check toolchain and target(arm-unknown-linux-gnueabihf), if not run(rustup target install arm-unknown-linux-gnueabihf)
 
-3. Download this repo(git clone https://bitbucket.org/CUAVA/kubos-linux-board-rpi).
+3. Download this repo(git clone https://github.com/Cube-OS/kubos-linux-build-rpi).
 
 4. CD into the folder(cd kubos-linux-board-rpi).
 
