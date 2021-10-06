@@ -27,5 +27,10 @@ PS:
 	
 		May need to patch 0005-Avoid-printing-null-strings.patch
 	
-		To activate I2c, SPI, UART see activate buses
-	
+		To activate I2c, SPI, UART see activate buses (bus activation after boot)
+
+**Patch instructions:**
+	- Start build
+	- wait for build to fail
+	- cd ./buildroot-2019.02.2/output/build/host-libglib2-2.56.3/gio/
+	- change gdbusauth.c and gdbusmessage.c as shown in 0005-Avoid-printing-null-strings.patch
