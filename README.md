@@ -30,6 +30,7 @@ PS:
 		To activate I2c, SPI, UART see activate buses (bus activation after boot)
 
 **Patch instructions:**
+	
 	- Start build
 	
 	- wait for build to fail
