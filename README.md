@@ -1,4 +1,4 @@
-Kubos linux build for raspberry pi boards, currently support rpi0, rpi0w, rpicm3 and rpicm3+(tested working on vagrant Kubos SDK, ubuntu 18.04 and 20.04).
+Kubos linux build for raspberry pi boards, currently support rpi0, rpi0w, rpi3b, rpi3b+, rpicm3 and rpicm3+(tested working on vagrant Kubos SDK, ubuntu 18.04 and 20.04).
 
 1. Follow this link(https://docs.kubos.com/1.20.0/getting-started/local-setup.html) to install all the required dependencies and verify everything is installed correctly and working(note: the rust target must be installed in the toolchain you going to use.).
 
